@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.danteyu.studio.githubusersapp.MainViewModel
 import com.danteyu.studio.githubusersapp.data.source.GitHubRepository
+import com.danteyu.studio.githubusersapp.home.HomeViewModel
 import java.lang.IllegalArgumentException
 
 /**
@@ -18,6 +19,8 @@ class ViewModelFactory constructor(private val gitHubRepository: GitHubRepositor
     override fun <T : ViewModel?> create(modelClass: Class<T>) = with(modelClass) {
         when {
             isAssignableFrom(MainViewModel::class.java) -> MainViewModel(gitHubRepository)
+
+            isAssignableFrom(HomeViewModel::class.java) -> HomeViewModel(gitHubRepository)
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

@@ -1,3 +1,5 @@
 <resources>
+    <!-- General   -->
     <string name="app_name">GitHub Users App</string>
+    <string name="user_list">使用者清單</string>
 </resources>
