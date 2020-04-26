@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.danteyu.studio.githubusersapp.MainViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
