@@ -1,17 +1,12 @@
 package com.danteyu.studio.githubusersapp.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.danteyu.studio.githubusersapp.R
 import com.danteyu.studio.githubusersapp.data.GitHubUser
 import com.danteyu.studio.githubusersapp.databinding.ItemHomeBinding
-import kotlinx.android.synthetic.main.item_home.view.*
 
 /**
  * Created by George Yu on 2020/4/27.

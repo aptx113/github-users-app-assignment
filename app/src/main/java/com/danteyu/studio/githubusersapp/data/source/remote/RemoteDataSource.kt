@@ -1,7 +1,6 @@
 package com.danteyu.studio.githubusersapp.data.source.remote
 
 import com.danteyu.studio.githubusersapp.R
-import com.danteyu.studio.githubusersapp.data.AllUsersResult
 import com.danteyu.studio.githubusersapp.data.GitHubUser
 import com.danteyu.studio.githubusersapp.data.Result
 import com.danteyu.studio.githubusersapp.data.source.GitHubDataSource

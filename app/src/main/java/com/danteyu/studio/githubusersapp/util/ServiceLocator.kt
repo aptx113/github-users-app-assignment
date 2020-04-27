@@ -1,6 +1,5 @@
 package com.danteyu.studio.githubusersapp.util
 
-import android.content.Context
 import androidx.annotation.VisibleForTesting
 import com.danteyu.studio.githubusersapp.data.source.DefaultGitHubRepository
 import com.danteyu.studio.githubusersapp.data.source.GitHubRepository

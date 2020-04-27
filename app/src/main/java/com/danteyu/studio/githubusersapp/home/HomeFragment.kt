@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.danteyu.studio.githubusersapp.NavigationDirections
 import com.danteyu.studio.githubusersapp.databinding.FragmentHomeBinding
 import com.danteyu.studio.githubusersapp.ext.getVmFactory
-import com.danteyu.studio.githubusersapp.network.LoadApiStatus
 
 /**
  * Created by George Yu on 2020/4/26.

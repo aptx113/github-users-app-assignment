@@ -1,7 +1,6 @@
 package com.danteyu.studio.githubusersapp.network
 
 import com.danteyu.studio.githubusersapp.BuildConfig
-import com.danteyu.studio.githubusersapp.data.AllUsersResult
 import com.danteyu.studio.githubusersapp.data.GitHubUser
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
