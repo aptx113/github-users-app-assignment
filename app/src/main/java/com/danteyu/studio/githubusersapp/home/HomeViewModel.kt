@@ -1,15 +1,19 @@
 package com.danteyu.studio.githubusersapp.home
 
+import android.graphics.Rect
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.recyclerview.widget.RecyclerView
 import com.danteyu.studio.githubusersapp.R
 import com.danteyu.studio.githubusersapp.data.GitHubUser
 import com.danteyu.studio.githubusersapp.data.Result
 import com.danteyu.studio.githubusersapp.data.source.GitHubRepository
 import com.danteyu.studio.githubusersapp.network.LoadApiStatus
 import com.danteyu.studio.githubusersapp.util.Logger
+import com.danteyu.studio.githubusersapp.util.Util.getDimensionPixelSize
 import com.danteyu.studio.githubusersapp.util.Util.getString
 import kotlinx.coroutines.launch
 
@@ -32,6 +36,29 @@ class HomeViewModel(private val gitHubRepository: GitHubRepository) : ViewModel(
 
     val error: LiveData<String>
         get() = _error
+
+    // status for the loading icon of swl
+    private val _refreshStatus = MutableLiveData<Boolean>()
+
+    val refreshStatus: LiveData<Boolean>
+        get() = _refreshStatus
+
+    val decoration = object : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
+            super.getItemOffsets(outRect, view, parent, state)
+            outRect.apply {
+                left = getDimensionPixelSize(R.dimen.spacing_min)
+                top = getDimensionPixelSize(R.dimen.spacing_min)
+                right = getDimensionPixelSize(R.dimen.spacing_min)
+                bottom = getDimensionPixelSize(R.dimen.spacing_min)
+            }
+        }
+    }
 
     init {
         Logger.i("------------------------------------")
@@ -71,6 +98,7 @@ class HomeViewModel(private val gitHubRepository: GitHubRepository) : ViewModel(
                     null
                 }
             }
+            _refreshStatus.value = false
         }
     }
 

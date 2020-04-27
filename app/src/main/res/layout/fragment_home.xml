@@ -14,6 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/gray_f0f0f0"
         tools:context=".home.HomeFragment">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -29,6 +30,8 @@
                 android:id="@+id/recycler_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:addDecoration="@{viewModel.decoration}"
+                app:gitHubUsers="@{viewModel.users}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
             </androidx.recyclerview.widget.RecyclerView>

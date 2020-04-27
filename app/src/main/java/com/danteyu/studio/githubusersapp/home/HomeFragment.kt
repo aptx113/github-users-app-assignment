@@ -34,10 +34,9 @@ class HomeFragment : Fragment() {
             viewModel.refresh()
         }
 
-        viewModel.status.observe(viewLifecycleOwner, Observer {
+        viewModel.refreshStatus.observe(viewLifecycleOwner, Observer {
             it?.let {
-                if (it != LoadApiStatus.LOADING)
-                    binding.layoutSwipeRefreshHome.isRefreshing = false
+                    binding.layoutSwipeRefreshHome.isRefreshing = it
             }
         })
 

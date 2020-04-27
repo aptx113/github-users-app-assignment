@@ -1,5 +1,12 @@
 <resources>
 
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 
+    <style name="CustomTextAppearanceBody2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/gray_999999</item>
+    </style>
 
 </resources>
