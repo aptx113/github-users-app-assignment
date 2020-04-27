@@ -10,4 +10,17 @@
         android:name="com.danteyu.studio.githubusersapp.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.danteyu.studio.githubusersapp.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="gitHubUserKey"
+            app:argType="com.danteyu.studio.githubusersapp.data.GitHubUser"
+            app:nullable="false" />
+    </fragment>
+    <action
+        android:id="@+id/navigate_to_detailFragment"
+        app:destination="@id/detailFragment" />
 </navigation>

@@ -26,16 +26,27 @@ object RemoteDataSource : GitHubDataSource {
             // this will run on a thread managed by Retrofit
             val listResult = getResultDeferred.await()
 
-//            listResult.error?.let {
-//                return Result.Fail(it)
-//            }
             Result.Success(listResult)
-//            listResult?.let {
-//                return Result.Success(it)
-//            }
-//            Result.Fail(getString(R.string.you_know_nothing))
 
         } catch (e: Exception) {
+            Logger.w("[${this::class.simpleName}] exception=${e.message}")
+            Result.Error(e)
+        }
+    }
+
+    override suspend fun getSingleUser(username: String): Result<GitHubUser> {
+        if (!isInternetAvailable()) {
+            return Result.Fail(getString(R.string.internet_not_connected))
+        }
+        // Get the Deferred object for our Retrofit request
+        val getResultDeferred = GitHubApi.retrofitService.getSingleGitHubUserAsync(username)
+        return try {
+            // this will run on a thread managed by Retrofit
+            val result = getResultDeferred.await()
+
+            Result.Success(result)
+
+        } catch (e: java.lang.Exception) {
             Logger.w("[${this::class.simpleName}] exception=${e.message}")
             Result.Error(e)
         }
