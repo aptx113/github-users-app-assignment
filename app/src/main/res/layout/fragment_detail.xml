@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="com.danteyu.studio.githubusersapp.detail.DetailViewModel" />
@@ -32,6 +34,7 @@
             android:layout_width="200dp"
             android:layout_height="0dp"
             android:layout_marginTop="65dp"
+            app:imageUrl="@{viewModel.userDetail.avatarUrl}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_normal"
+            android:text="@{viewModel.userDetail.name}"
             android:textAppearance="@style/CustomHeadline5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_small"
+            android:text="@{viewModel.userDetail.bio}"
             android:textAppearance="@style/CustomTextAppearanceBody1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,12 +70,11 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginHorizontal="@dimen/space_normal"
-            android:layout_marginTop="@dimen/space_normal"
+            android:layout_marginTop="28dp"
             android:background="@color/gray_e7e7e7"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_detail_bio"
             app:layout_constraintVertical_bias="0.53" />
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -89,6 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal"
+            android:text="@{viewModel.userDetail.login}"
             android:textAppearance="@style/CustomTextAppearanceBody2"
             app:layout_constraintBottom_toTopOf="@id/badge_detail_site_admin_"
             app:layout_constraintStart_toEndOf="@id/image_detail_login"
@@ -107,6 +112,7 @@
             android:text="@string/staff"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:visibility="@{viewModel.userDetail.siteAdmin == false ? View.GONE: View.VISIBLE}"
             app:layout_constraintBottom_toBottomOf="@id/image_detail_login"
             app:layout_constraintStart_toEndOf="@id/image_detail_login"
             app:layout_constraintTop_toBottomOf="@id/text_detail_login" />
@@ -127,6 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal"
+            android:text="@{viewModel.userDetail.location}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="@color/gray_888888"
             app:layout_constraintBottom_toBottomOf="@id/image_detail_location"
@@ -150,6 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal"
+            android:text="@{viewModel.userDetail.blog}"
             android:textAppearance="@style/CustomTextAppearanceBody2"
             android:textColor="@color/primaryColor"
             app:layout_constraintBottom_toBottomOf="@id/image_detail_blog"
@@ -157,6 +165,25 @@
             app:layout_constraintTop_toTopOf="@id/image_detail_blog"
             tools:text="http" />
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setupApiStatus="@{viewModel.status}"
+            tools:visibility="gone" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setupApiErrorMessage="@{viewModel.error}"
+            tools:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

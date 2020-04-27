@@ -55,8 +55,8 @@ interface GitHubApiService {
     @GET("users")
     fun getAllGitHubUserAsync(): Deferred<List<GitHubUser>>
 
-    @GET("users/{:username}")
-    fun getSingleGitHubUserAsync(@Path(":username") username: String): Deferred<GitHubUser>
+    @GET("users/{username}")
+    fun getSingleGitHubUserAsync(@Path("username") username: String): Deferred<GitHubUser>
 
 }
 
