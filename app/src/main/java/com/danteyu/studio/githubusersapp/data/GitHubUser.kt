@@ -40,5 +40,21 @@ data class GitHubUser(
     val receivedEventsUrl: String,
     val type: String,
     @Json(name = "site_admin")
-    val siteAdmin: Boolean
+    val siteAdmin: Boolean,
+    var name: String? = null,
+    var company: String? = null,
+    var blog: String? = null,
+    var location: String? = null,
+    var email: String? = null,
+    var hireable: Boolean? = null,
+    var bio: String? = null,
+    @Json(name = "public_repos")
+    var publicRepos: Long? = null,
+    @Json(name = "public_gists")
+    var publicGists: Long? = null,
+    var followers: Long? = null,
+    var following: Long? = null,
+    var createdAt: String? = null,
+    var updatedAt: String? = null
+
 ) : Parcelable

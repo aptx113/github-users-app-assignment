@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@{viewModel.currentFragmentType.value}"
-                android:textAppearance="?textAppearanceHeadline5"
+                android:textAppearance="?textAppearanceHeadline6"
                 tools:text="GitHub" />
 
         </com.google.android.material.appbar.MaterialToolbar>

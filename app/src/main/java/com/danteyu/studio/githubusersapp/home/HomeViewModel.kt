@@ -52,10 +52,10 @@ class HomeViewModel(private val gitHubRepository: GitHubRepository) : ViewModel(
         ) {
             super.getItemOffsets(outRect, view, parent, state)
             outRect.apply {
-                left = getDimensionPixelSize(R.dimen.spacing_min)
-                top = getDimensionPixelSize(R.dimen.spacing_min)
-                right = getDimensionPixelSize(R.dimen.spacing_min)
-                bottom = getDimensionPixelSize(R.dimen.spacing_min)
+                left = getDimensionPixelSize(R.dimen.space_min)
+                top = getDimensionPixelSize(R.dimen.space_min)
+                right = getDimensionPixelSize(R.dimen.space_min)
+                bottom = getDimensionPixelSize(R.dimen.space_min)
             }
         }
     }
