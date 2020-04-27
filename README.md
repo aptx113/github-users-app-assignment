@@ -1,6 +1,13 @@
 # GitHub User App
 An App which shows the GitHub users in a List 
 
+In this branch you'll find:
+* Kotlin Coroutines for background operations.
+* A single-activity architecture, using the Navigation component to manage fragment operations.
+* A presentation layer that contains a fragment (View) and a ViewModel per screen (or feature).
+* Reactive UIs using LiveData observables and Data Binding.
+* A data layer with a repository and one data sources (remote) that is queried with one-shot operations (no listeners or data streams).
+
 ## Features 功能介紹
 
 1. Display GitHub User List thorough Get all users API
