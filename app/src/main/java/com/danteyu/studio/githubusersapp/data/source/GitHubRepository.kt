@@ -10,4 +10,6 @@ import com.danteyu.studio.githubusersapp.data.Result
 interface GitHubRepository {
 
     suspend fun getAllUsers(): Result<List<GitHubUser>>
+
+    suspend fun getSingleUser(username: String): Result<GitHubUser>
 }

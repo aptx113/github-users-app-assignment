@@ -12,6 +12,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 /**
  * Created by George Yu on 2020/4/26.
@@ -47,12 +48,15 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 /**
- * A public interface that exposes the [getAllGitHubUserAsync] methods
+ * A public interface that exposes the [getAllGitHubUserAsync], [getSingleGitHubUserAsync] methods
  */
 interface GitHubApiService {
 
     @GET("users")
     fun getAllGitHubUserAsync(): Deferred<List<GitHubUser>>
+
+    @GET("users/{:username}")
+    fun getSingleGitHubUserAsync(@Path(":username") username: String): Deferred<GitHubUser>
 
 }
 

@@ -8,5 +8,7 @@ import com.danteyu.studio.githubusersapp.data.Result
  */
 interface GitHubDataSource {
 
-    suspend fun getAllUsers():Result<List<GitHubUser>>
+    suspend fun getAllUsers(): Result<List<GitHubUser>>
+
+    suspend fun getSingleUser(username: String): Result<GitHubUser>
 }
