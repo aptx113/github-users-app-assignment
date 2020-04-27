@@ -27,6 +27,11 @@ class HomeViewModel(private val gitHubRepository: GitHubRepository) : ViewModel(
     val users: LiveData<List<GitHubUser>>
         get() = _users
 
+    private val _navigateToDetail = MutableLiveData<GitHubUser>()
+
+    val navigateToDetail: LiveData<GitHubUser>
+        get() = _navigateToDetail
+
     private val _status = MutableLiveData<LoadApiStatus>()
 
     val status: LiveData<LoadApiStatus>
@@ -100,6 +105,14 @@ class HomeViewModel(private val gitHubRepository: GitHubRepository) : ViewModel(
             }
             _refreshStatus.value = false
         }
+    }
+
+    fun navigateToDetail(gitHubUser: GitHubUser) {
+        _navigateToDetail.value = gitHubUser
+    }
+
+    fun onDetailNavigated() {
+        _navigateToDetail.value = null
     }
 
     fun refresh() {
