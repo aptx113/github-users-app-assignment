@@ -1,19 +1,21 @@
 package com.danteyu.studio.githubusersapp.network
 
 import com.danteyu.studio.githubusersapp.BuildConfig
+import com.danteyu.studio.githubusersapp.data.AllUsersResult
+import com.danteyu.studio.githubusersapp.data.GitHubUser
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Deferred
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.GET
 
 /**
  * Created by George Yu on 2020/4/26.
  */
-private const val HOST_NAME = ""
-private const val API_VERSION = ""
 private const val BASE_URL = "https://api.github.com/"
 
 /**
@@ -45,9 +47,12 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 /**
- * A public interface that exposes the [getWeatherForecastAsync] methods
+ * A public interface that exposes the [getAllGitHubUserAsync] methods
  */
 interface GitHubApiService {
+
+    @GET("users")
+    fun getAllGitHubUserAsync(): Deferred<List<GitHubUser>>
 
 }
 
