@@ -10,12 +10,12 @@ This app implements MVVM architecure by applying:
 
 ## Features 功能介紹
 
-1. Display GitHub User List thorough Get all users API
+1. Display GitHub User List through Get all users API
 
 <img width="240" height="500" src="https://github.com/aptx113/github-users-app-assignment/blob/master/image_for_readme/user_list.PNG"/>
 
 
-2. Display GitHub Single User detail thorough Get a single user API
+2. Display GitHub Single User detail through Get a single user API
 <p align="left">
 <img width="240" height="500" src="https://github.com/aptx113/github-users-app-assignment/blob/master/image_for_readme/user_detail.PNG"/>
  
