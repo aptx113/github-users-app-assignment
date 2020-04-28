@@ -1,7 +1,7 @@
 # GitHub User App
 An App which shows the GitHub users in a List 
 
-In this branch you'll find:
+This app implements MVVM architecure by applying:
 * Kotlin Coroutines for background operations.
 * A single-activity architecture, using the Navigation component to manage fragment operations.
 * A presentation layer that contains a fragment (View) and a ViewModel per screen (or feature).
